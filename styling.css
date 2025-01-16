@@ -21,15 +21,10 @@ h1{
     position: absolute;
     transform: translateY(1050%);
     right: 65%;
-    animation: 
-            typing 2s steps(18),
-            cursor .4s step-end infinite alternate;
+  
 
 }
 
-.containerwork{
-    display: inline-block;
-}
 
 .members {
     display: flex;
