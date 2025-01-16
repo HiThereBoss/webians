@@ -1,3 +1,40 @@
 body{
     background-color: #4A2040;
 }
+
+h1{
+    font-family: sans-serif;
+    color: #Ffffff;
+    font-size: 150px;
+    position: absolute;
+    transform: translateY(30%);
+    right: 780px;
+    
+}
+
+.slogan{
+    font-family: sans-serif;
+    color: #Ffffff;
+    font-size: 150%;
+    font-variant: small-caps;
+    font-style: italic;
+    position: absolute;
+    transform: translateY(1050%);
+    right: 65%;
+    animation: 
+            typing 2s steps(18),
+            cursor .4s step-end infinite alternate;
+
+}
+
+.containerwork{
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
