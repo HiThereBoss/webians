@@ -1,7 +1,34 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: #4A2040;
     font-family: sans-serif;
-    font-family: sans-serif;
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    padding: 40px 40px;
+    background-color: #4A2040;
+    color: #fff;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
 #frontpage{
@@ -10,7 +37,6 @@ body{
     position: absolute;
     transform: translateY(-20%);
     right: 780px;
-    
 }
 
 .slogan{
@@ -21,27 +47,59 @@ body{
     position: absolute;
     transform: translateY(700%);
     right: 65.5%;
-  
-
 }
 
-
-.members {
+#about-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: #4A2040;
+    color: #fff;
+}
+
+#about-content h1 {
+    margin-bottom: 20px;
+}
+
+#about-content p {
+    margin: auto;
+}
+
+#members {
     justify-content: center;
     flex-direction: row;
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.member-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .member {
     margin: 10px;
-    padding: 10px;
-    border: 1px solid #000;
+    margin-top: 20px;
+    padding: 13px;
     border-radius: 10px;
     background-color: #fff;
-    width: 300px;
+    width: 22%;
     text-align: center;
+    color: #000;
+}
+
+.member h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.member p {
+    font-size: 14px;
+    margin-top: 1px;
+    width: 100%;
 }
 
 .member img {
@@ -49,4 +107,30 @@ body{
     border-radius: 5px;
 }
 
+@media (max-width: 800px) {
+    #about-content h1, h2 {
+        font-size: 40px;
+        text-align: center;
+    }
+    #about-content p {
+        font-size: 20px;
+    }
+    .member {
+        width: 100%;
+    }
+    .member h3 {
+        font-size: 25px;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .member p {
+        font-size: 20px;
+        margin-top: 1px;
+        width: 100%;
+    }
+    .member-container {
+        flex-direction: column;
+        width: 100%;
+    }
+}
 
