@@ -25,27 +25,13 @@ body{
 
 }
 
-img{
-    
-    transform: translateX(-500px);
-    transform: translateY(260px);
-    
-}
-h3{
-    color: white;
-    font-size: 200px;
-    transform: translateY(200%);
-    transform: translateX(60%);
-    bottom: 600%;
 
 .members {
-    margin-top: 20px;
-}
-
-.member-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
 }
 
 .member {
