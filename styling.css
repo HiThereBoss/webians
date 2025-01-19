@@ -1,13 +1,14 @@
 body{
     background-color: #4A2040;
     font-family: sans-serif;
+    font-family: sans-serif;
 }
 
 #frontpage{
     color: #Ffffff;
     font-size: 150px;
     position: absolute;
-    transform: translateY(30%);
+    transform: translateY(-20%);
     right: 780px;
     
 }
@@ -18,11 +19,24 @@ body{
     font-variant: small-caps;
     font-style: italic;
     position: absolute;
-    transform: translateY(1050%);
-    right: 65%;
+    transform: translateY(700%);
+    right: 65.5%;
   
 
 }
+
+img{
+    
+    transform: translateX(-500px);
+    transform: translateY(260px);
+    
+}
+h3{
+    color: white;
+    font-size: 200px;
+    transform: translateY(200%);
+    transform: translateX(60%);
+    bottom: 600%;
 
 .members {
     margin-top: 20px;
@@ -48,3 +62,5 @@ body{
     width: 100%;
     border-radius: 5px;
 }
+
+
