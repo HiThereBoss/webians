@@ -4,9 +4,9 @@
 }
 
 body{
-    background-color: #4A2040;
+    background-color: white;
     font-family: sans-serif;
-    color: #fff;
+    color: #967969;
 }
 
 .header {
@@ -15,8 +15,7 @@ body{
     justify-content: space-between;
     align-items: left;
     padding: 40px 40px;
-    background-color: #4A2040;
-    color: #fff;
+    background-color: #Ffffff;
 }
 
 .header nav {
@@ -26,7 +25,7 @@ body{
 }
 
 .header nav a {
-    color: #fff;
+    color: #967969;
     text-decoration: none;
     margin: 0 10px;
 }
@@ -39,14 +38,25 @@ body{
     right: 780px;
 }
 
-.slogan{
-    color: #Ffffff;
-    font-size: 150%;
-    font-variant: small-caps;
-    font-style: italic;
-    position: absolute;
-    transform: translateY(700%);
-    right: 65.5%;
+#home-title{
+    font-size: 600%;
+    margin-top: 16%;
+    margin-left: 6%;
+    
+    
+}
+
+#home-title sup {
+    font-size: 0.2em;
+}
+
+#slogan{
+    
+    font-weight: 900;
+    margin-left: 8%;
+    font-size: xx-small;
+    
+
 }
 
 #about-content {
@@ -132,5 +142,6 @@ body{
         flex-direction: column;
         width: 100%;
     }
+  
 }
 
