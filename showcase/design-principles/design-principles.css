@@ -35,6 +35,10 @@
     margin-bottom: 20px;
 }
 
+.design-principle .content p {
+    align-self: center;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
