@@ -1,0 +1,49 @@
+.container * {
+    margin-top: 10px;
+}
+
+.container {
+    margin: 2%;
+    width: 90%;
+    align-items: center;
+}
+
+.evidence-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 40%;
+    max-width: 40%;
+    justify-content: space-evenly;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.evidence-container img {
+    width: 100%;
+}
+
+.design-principle {
+    width: 70%;
+}
+
+.design-principle .content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.design-principle .content p {
+    align-self: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+#checklist {
+    list-style: square;
+}
