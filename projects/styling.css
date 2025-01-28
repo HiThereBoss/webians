@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: sans-serif;
+    color: #967969;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    padding: 40px 40px;
+    background-color: #Ffffff;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.header nav a {
+    color: #967969;
+    text-decoration: none;
+    margin: 0 10px;
+    margin-left: 1.2%;
+    margin-top: -3%;
+}
+
+.header h1{
+    margin-left: 4%;
+    margin-top: 1%;
+}
+
+
+
+#frontpage{
+    color: #Ffffff;
+    font-size: 150px;
+    position: absolute;
+    transform: translateY(-20%);
+    right: 780px;
+}
+
+#home-title{
+    font-size: 600%;
+    margin-top: 16%;
+    margin-left: 6%;
+    
+    
+}
+
+#home-title sup {
+    font-size: 0.2em;
+}
+
+#slogan{
+    
+    font-weight: 900;
+    margin-left: 8%;
+    font-size: xx-small;
+    
+
+}
+
+#about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: #Ffffff;
+    color: #967969;
+}
+
+#about-content h1 {
+    margin-bottom: 20px;
+}
+
+#members {
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#about-info p {
+    width: 50%;
+}
+
+.member-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.member {
+    margin: 10px;
+    margin-top: 20px;
+    padding: 13px;
+    border-radius: 10px;
+    background-color: #967969;
+    width: 22%;
+    text-align: center;
+    color: #Ffffff;
+}
+
+.member h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.member p {
+    font-size: 14px;
+    margin-top: 1px;
+    width: 100%;
+}
+
+.member img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+    #about-content h1, h2 {
+        font-size: 40px;
+        text-align: center;
+    }
+    #about-content p {
+        font-size: 20px;
+    }
+    #about-info p {
+        width: 100%;
+    }
+    .member {
+        width: 100%;
+    }
+    .member h3 {
+        font-size: 25px;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .member p {
+        font-size: 20px;
+        margin-top: 1px;
+        width: 100%;
+    }
+    .member-container {
+        flex-direction: column;
+        width: 100%;
+    }
+  
+}
+
