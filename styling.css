@@ -102,57 +102,77 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px;
+    margin-left: 1%;
+    padding: 5%;
+    padding-top: 1%;
     background-color: #Ffffff;
     color: #967969;
+    width: 70%;
+    margin: auto;
 }
 
 #about-content h1 {
     margin-bottom: 20px;
-}
-
-#members {
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
 }
 
 #about-info p {
-    width: 50%;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.emphasis {
+    color: #967969;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#members {
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+#members h2 {
+    font-size: 40px;
+    text-align: center;
 }
 
 .member-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .member {
+    display: flex;
+    flex-direction: row;
     margin: 10px;
     margin-top: 20px;
-    padding: 13px;
+    padding: 1%;
+    padding-bottom: 10px;
     border-radius: 10px;
     background-color: #967969;
-    width: 22%;
-    text-align: center;
+    width: 80%;
     color: #Ffffff;
 }
 
 .member h3 {
-    font-size: 18px;
-    margin-top: 10px;
-    width: 100%;
+    font-size: 25px;
 }
 
 .member p {
-    font-size: 14px;
+    font-size: 20px;
     margin-top: 1px;
-    width: 100%;
+    margin-bottom: 10%;
 }
 
 .member img {
-    width: 100%;
+    width: 30%;
     border-radius: 5px;
 }
 
@@ -197,8 +217,51 @@ body{
     #about-info p {
         width: 100%;
     }
+    #members {
+        width: 90%;
+        margin: auto;
+        margin-top: 10%;
+    }
+    .header {
+        margin: 0;
+        width: 100%;
+        padding: 40px 0 40px 0;
+        text-align: center;
+    }
+    .header h1 {
+        margin: 0;
+        font-size: 3em;
+    }
+    .header nav {
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+        margin-top: 5%;
+    }
+    .header nav a {
+        font-size: 1.9em;
+    }
+    .member-container {
+        width: 100%;
+    }
+}
+
+@media (max-width:500px) {
+    .header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    .header nav {
+        margin-top: 9%;
+    }
+    .header nav a {
+        font-size: 1.6em;
+    }
     .member {
         width: 100%;
+        padding: 3%;
+        flex-direction: column;
+        align-items: center;
     }
     .member h3 {
         font-size: 25px;
@@ -209,6 +272,14 @@ body{
         font-size: 20px;
         margin-top: 1px;
         width: 100%;
+    }
+    .member img {
+        width: 100%;
+    }
+    .member-text {
+        margin: 1%;
+        width: 100%;
+        text-align: center;
     }
     .member-container {
         flex-direction: column;
