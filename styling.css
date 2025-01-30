@@ -62,7 +62,6 @@ h3 {
 }
 
 #home-title{
-    font-size: 600%;
     margin-left: 6%;
     background:linear-gradient(43deg, black 0%, #b4896c 39%, #967969 100%);
     background-size: 200% 200%;
@@ -70,7 +69,11 @@ h3 {
     color: transparent;
     animation: gradientEffect 10s infinite linear;
 
-    }
+}
+
+#home-title h1 {
+    font-size: 11em;
+}
 
 @keyframes gradientEffect{
     0%{
@@ -245,7 +248,7 @@ h3 {
 
 @media (max-width: 1024px) {
     #home-title h1 {
-        font-size: 1.5em;
+        font-size: 8em;
     }
     #about-content {
         width: 90%;
@@ -304,7 +307,10 @@ h3 {
 
 @media (max-width:500px) {
     #home-title h1 {
-        font-size: 1em;
+        font-size: 6em;
+    }
+    #slogan h1 {
+        font-size: 2em;
     }
     .header h1 {
         margin: 0;
