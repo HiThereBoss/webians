@@ -100,11 +100,12 @@ h3 {
 #slogan{
     
     font-style: italic;
-    margin-left: 6.2%;
-    font-size: xx-small;
-    
-    
+    margin-left: 6.4%;  
 
+}
+
+#slogan h1 {
+    font-size: 1.1em;
 }
 
 #about-content {
