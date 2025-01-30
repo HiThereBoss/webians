@@ -23,19 +23,25 @@ body{
     align-items: center;
     margin-top: 3%;
     margin-left: 3%;
+    
 }
 
 .header nav a {
     color: #967969;
     text-decoration: none;
     margin: 0 10px;
-    margin-left: 1.2%;
-    margin-top: -3%;
-}
+    margin-left: 1%;
+    margin-top: -1%;
+    font-size: smaller;
+  }
 
 .header h1{
-    margin-left: 4%;
+  
     margin-top: 1%;
+    text-align: center;
+    margin-left: -81%;
+    font-size: small;
+    
 }
 
 
@@ -50,11 +56,33 @@ body{
 
 #home-title{
     font-size: 600%;
-    margin-top: 16%;
+    margin-top: 19%;
     margin-left: 6%;
-    
-    
+    background:linear-gradient(43deg, black 0%, #b4896c 39%, #967969 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientEffect 10s infinite linear;
+
+    }
+
+@keyframes gradientEffect{
+    0%{
+        background-position: 0% 50%;
+        
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0% 50%;
+        
+    }
 }
+
+
+
 
 #home-title sup {
     font-size: 0.2em;
@@ -62,9 +90,10 @@ body{
 
 #slogan{
     
-    font-weight: 900;
-    margin-left: 8%;
+    font-style: italic;
+    margin-left: 6.2%;
     font-size: xx-small;
+    
     
 
 }
@@ -127,6 +156,36 @@ body{
     border-radius: 5px;
 }
 
+.header nav a:hover{
+    color: black;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+    transform: scale(1.2);
+    
+}
+
+.recContainer{
+    display: flex;
+ 
+}
+
+.rec1{
+    width: 100px;   
+    height: 30px;
+    background: black;
+    margin-left: 6%;
+    margin-top: -16%;
+}
+
+.rec2{
+    width: 100px;   
+    height: 30px;
+    background: #967969;
+    margin-left: 0.4%;
+    margin-top: -16%; 
+}
+
+
 @media (max-width: 800px) {
     #about-content h1, h2 {
         font-size: 40px;
@@ -155,6 +214,9 @@ body{
         flex-direction: column;
         width: 100%;
     }
+
+   
+    
   
 }
 
