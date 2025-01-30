@@ -9,6 +9,16 @@ body{
     color: #967969;
 }
 
+h1 {
+    font-size: 30px;
+}
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 15px;
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -220,9 +230,25 @@ body{
     margin-left: 0.4%;
 }
 
+#project-content {
+    margin-left: 6%;
+    width: 50%;
+}
+
+#project-content * {
+    margin-top: 1%;
+}
+
+#project-content h2 {
+    margin-top: 5%;
+}
+
 @media (max-width: 1024px) {
     #home-title h1 {
         font-size: 1.5em;
+    }
+    #about-content {
+        width: 90%;
     }
     #about-content h1, h2 {
         font-size: 35px;
@@ -260,6 +286,19 @@ body{
     }
     .member-container {
         width: 100%;
+    }
+    #project-content {
+        width: 80%;
+        margin: auto;
+    }
+    #project-content h1, h2{
+        font-size: 30px;
+    }
+    #project-content h3 {
+        font-size: 25px;
+    }
+    #project-content p {
+        font-size: 20px;
     }
 }
 
