@@ -14,33 +14,30 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: left;
-    padding: 40px 40px;
     background-color: #Ffffff;
+    margin-top: 3%;
+    margin-left: 6%;
 }
 
 .header nav {
     display: flex;
     align-items: center;
-    margin-top: 3%;
-    margin-left: 3%;
+    margin-top: 2%;
     
 }
 
 .header nav a {
     color: #967969;
     text-decoration: none;
-    margin: 0 10px;
-    margin-left: 1%;
-    margin-top: -1%;
+    margin-right: 20px;
     font-size: smaller;
+    text-align: left;
   }
 
 .header h1{
   
     margin-top: 1%;
-    text-align: center;
-    margin-left: -81%;
-    font-size: small;
+    font-size: medium;
     
 }
 
@@ -56,7 +53,6 @@ body{
 
 #home-title{
     font-size: 600%;
-    margin-top: 19%;
     margin-left: 6%;
     background:linear-gradient(43deg, black 0%, #b4896c 39%, #967969 100%);
     background-size: 200% 200%;
@@ -111,6 +107,7 @@ body{
     margin: auto;
 }
 
+
 #about-content h1 {
     margin-bottom: 20px;
     text-align: center;
@@ -154,10 +151,8 @@ body{
     margin: 10px;
     margin-top: 20px;
     padding: 1%;
-    padding-bottom: 10px;
     border-radius: 10px;
     background-color: #967969;
-    width: 80%;
     color: #Ffffff;
 }
 
@@ -176,6 +171,27 @@ body{
     border-radius: 5px;
 }
 
+.member a {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #Ffffff;
+    text-decoration: none;
+}
+
+.member-text {
+    margin: 3% 5%;
+    width: 70%;
+}
+
+.member a {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #Ffffff;
+    text-decoration: none;
+}
+
 .header nav a:hover{
     color: black;
     transition: color 0.3s ease;
@@ -186,7 +202,8 @@ body{
 
 .recContainer{
     display: flex;
- 
+    margin-top: 19%;
+    margin-bottom: -2%;
 }
 
 .rec1{
@@ -194,7 +211,6 @@ body{
     height: 30px;
     background: black;
     margin-left: 6%;
-    margin-top: -16%;
 }
 
 .rec2{
@@ -202,13 +218,15 @@ body{
     height: 30px;
     background: #967969;
     margin-left: 0.4%;
-    margin-top: -16%; 
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
+    #home-title h1 {
+        font-size: 1.5em;
+    }
     #about-content h1, h2 {
-        font-size: 40px;
+        font-size: 35px;
         text-align: center;
     }
     #about-content p {
@@ -247,6 +265,9 @@ body{
 }
 
 @media (max-width:500px) {
+    #home-title h1 {
+        font-size: 1em;
+    }
     .header h1 {
         margin: 0;
         font-size: 2em;
@@ -255,7 +276,9 @@ body{
         margin-top: 9%;
     }
     .header nav a {
-        font-size: 1.6em;
+        text-align: center;
+        font-size: 1.15em;
+        margin: 0 10px;
     }
     .member {
         width: 100%;
