@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>THEWEBIANSPORTFOLIO</title>
+    <link rel="stylesheet" href="../../styling.css">
+    <link rel="stylesheet" href="delivery-plan.css">
+</head>
+<body>
+    <div class="header">
+        <h1>THEWEBIANSPORTFOLIO</h1>
+        <nav>
+            <a href="../../index.html">HOME</a>
+            <a href="../../about.html">ABOUT US</a>
+            <a href="../../showcase.html">SHOWCASE</a>
+            <a href="../../project.html">PROJECT</a>
+        </nav>
+    </div>
+    <div id = "delivery-plan-main">
+        <h2>Delivery Plan</h2>
+
+        <div class="delivery-plan-section">
+            <h3>Names</h3>
+            <p>Team Name: Webians</p>
+            <p>Members:</p>
+            <ul>
+                <li>Emre Bozkurt</li>
+                <li>Sreyo Biswas</li>
+                <li>Peter Wu</li>
+                <li>Tiya Jathan</li>
+                <li>Siddhi Upadhyaya</li>
+            </ul>
+            <p>Client: CreationsByAla</p>
+            <p>App: CreationsByAla</p>
+        </div>
+        <div class="delivery-plan-section">
+            <h3>Purpose</h3>
+            <p>The web-app will be for clients to order cakes and bouquets for weddings, anniversaries and any other occasions. There will be a home page, in which buyers can view products, click on them to view their descriptions, and add them to cart. After adding them to the cart, they can buy the products they chose, and as a result, a receipt will be generated with their order number and details. We chose to build this product because we wanted to help someone grow their business. Aala, an iBioMed student at McMaster, has had her baking and bouquet business for years, but felt that there was a gap between customers and her products. The only way people knew about her products was through word-of-mouth. To order her products, people would have to call her continuously; she believed that it felt tedious. So, we wanted to create a website for her so that she could use it to promote her business, and the website would also create an “ordering service” that is seamlessly easy.</p>
+        </div>
+        <div class="delivery-plan-section">
+            <h3>Data Description</h3>
+            <h4>Table 1: Products</h4>
+            <p>Required for fetching available products, to generate purchasable products to the gallery-style view of the order page.</p>
+            <p>Must store a product ID, its name, availability, description, its price, URLs for images on the server, and how long it would take to make in hours.</p>
+            <h5>Fields</h5>
+            <ul>
+                <li>ID: int</li>
+                <li>Name: VARCHAR(50)</li>
+                <li>Availability: BOOLEAN</li>
+                <li>Description: TEXT</li>
+                <li>Price: DECIMAL(5,2)</li>
+                <li>Images: VARCHAR(50)</li>
+                <li>Time to make: TIME</li>
+            </ul>
+            <br>
+            <h4>Table 2: Order details</h4>
+            <p>Required for storing data about customers’ order for future reference.
+                A unique ID will be given to each order, along with the customer’s name, email, and phone to identify them if necessary, as well the purchase date, the product IDs, and the price they paid.</p>
+            <p>The product IDs will be stored in a varchar, in the format “001,002,..,X”, in order to be able to store multiple product IDs in one field. An importer and exporter needs to be made to read and write data in this custom list structure.</p>
+            <h5>Fields</h5>
+            <ul>
+                <li>ID: int</li>
+                <li>Name: VARCHAR(50)</li>
+                <li>Email: VARCHAR(50)</li>
+                <li>Phone: VARCHAR(10)</li>
+                <li>PDate: DATE</li>
+                <li>ProdIDs: VARCHAR(50)</li>
+                <li>Paid: DECIMAL(5,2)</li>
+            </ul>
+        </div>
+        <div class="delivery-plan-section">
+            <h3>Functions Peformed by the App</h3>
+            <p>
+                The website will have a homepage where all the available products(bouquets and cakes) and varieties of products will be shown. There will also be a mainpage where some of the products will be displayed in a gallery.
+            </p>
+            <p>
+                There is also an order page where there are options to order cakes and bouquets, that will be placed in a cart where there will be a list which displays all items that are added to the cart. The total price of the products will be displayed in the cart(tax, etc.). This feature will require the “SELECT” query, in order to fetch products from the database and display them in the page accordingly.
+            </p>
+            <p>
+                There will also be a popup display of the products which displays its title, descriptions, price, and a button which allows the user to add it to their cart. This will also require the “SELECT” query, in order to fetch more product information to be displayed in the pop-up page.
+            </p>
+            <p>
+                To purchase, there will be a purchase option where you have to enter your name, relevant contact details, card details, information validation and any tips if you want to offer. A receipt will be generated which will display each item’s price with tax and any tip amount you want to offer, and the subtotal will be displayed, including an option to download your receipt in either pdf or png. This feature will require the “INSERT” query, in order to insert the purchase data into the order details table of the database for future reference.
+            </p>
+            <p>
+                Finally, there will be a “my orders” section, where there will be the list of orders a customer has made, alongside countdowns for when each product will be ready. This form will update whenever the user makes a purchase. For now, the data will be stored in “localstorage” instead of the database, as there are no plans for an account system where the order history can be stored in the database for each user.
+            </p>
+        </div>
+        <div class="delivery-plan-section">
+            <h3>Role of PHP and JavaScript</h3>
+            <p>
+                PHP will be used to fetch products from the database, and display them in the orders page. It will also be used to insert data into the order’s table in the database upon successful user purchase of a product. 
+            </p>
+            <p>
+                Javascript will be used for data validation when the user is purchasing their cart. It will also be used for defining logic to be executed by buttons, and pop-up logic for products in the order page. Finally, the cart system and order history system will be developed in Javascript, which will make use of localstorage as the app will not have an account system to store account-specific data in the database. As such, the bulk of the code will be in JavaScript.
+            </p>
+        </div>
+        <div class="delivery-plan-section">
+            <h3>Role of Team Members</h3>
+            <ul>
+                <li>Emre: Cart (List display of all items in cart, Total price (+tax, etc.)), Gallery display of products, Add to cart.</li>
+                <li>Sreyo:  Home page, Popup display for each product (Title of product, Description, Price), logic for when product is clicked and opened to view.</li>
+                <li>Tiya: Receipt (Each item’s price + tax, Tip amount, Subtotal, Option to save receipt (download pdf or png)</li>
+                <li>Siddhi: Purchase form (Name, relevant contact info, (fake) card details, Info validation, Tip %)</li>
+                <li>Peter:  My Orders page, where a history of all past orders can be viewed.</li>
+            </ul>
+        </div>
+        <div class="delivery-plan-section">
+            <h3>The Increments</h3>
+
+            <h4>First Increment</h4>
+            <p>
+                Develop a skeleton of the web app, a purely visual prototype that can be delivered to the client to receive any feedback before implementing logic. This will be done using raw HTML and CSS; we will focus on meeting the client’s visual needs, which include a basic colour palette, shapes of choice alongside fonts they wish to have. 
+            </p>
+            <h5>Tasks</h5>
+            <ul>
+                <li>Emre: make the order page, create HTML layout for the order page and cart page.</li>
+                <li>Sreyo: make the home page, create CSS and variables for theme colors to be used throughout</li>
+                <li>Tiya: Make a sample receipt page, doesn’t have to be accessible by the web app for now.</li>
+                <li>Siddhi: Make a sample purchase form, focus purely on design and structure rather than functionality for now.</li>
+                <li>Peter: make a skeleton for the “My Orders” page</li>
+            </ul>
+            <p>Due Date: 28th March, 2025</p>
+
+            <h4>Second Increment</h4>
+            <p>
+                Work on client feedback, and implement Javascript logic. This includes: beginning the cart system, working pop-ups for products in the order page, and developing a working form for purchases.
+            </p>
+            <h5>Tasks</h5>
+            <ul>
+                <li>Emre: begin working on cart functionality, including: adding items to cart, displaying them in the cart page, removing items from cart, and calculating final price.</li>
+                <li>Sreyo: work on popup logic, design, and structure. Implement the HTML, JS, and CSS required for this. Pop-up must have an add-to-cart button which Emre will add functionality for which he will use.</li>
+                <li>Tiya: work on exporting the receipt into a PDF format.</li>
+                <li>Siddhi: add data validation to the form through JS, and if everything goes well, redirect to the receipt which Tiya should have prepared a sample for, with the relevant information.</li>
+                <li>Peter: develop a system for adding products into the “My Orders” page, which will not be able to take any data at this increment. The system needs to store information to localstorage, so that they can be fetched everytime the user comes back, and displays the information back again.</li>
+            </ul>
+            <p>Due Date: 5th April, 2025</p>
+            
+            <h4>Third Increment</h4>
+            <p>
+                With the logic mainly completed, finish off the cart and purchasing system, and implement automatic loading of all available products into the order page. Finishing off these features will require the use of PHP to communicate with the database.
+            </p>
+            <h5>Tasks</h5>
+            <ul>
+                <li>Emre: work on auto-generation of products in the order page, by fetching data from the database and adding product “cards” accordingly. Successful purchase of product should insert data into the order details table.</li>
+                <li>Sreyo: pop-up should now fetch data from the database, displaying information about the selected product in the database.</li>
+                <li>Tiya and Siddhi: work on actual communication between the purchase and receipt page, so that the information from the purchased items will be sent to the receipt and formatted properly.</li>
+                <li>Peter: upon successful purchase, the order should be added into the “My Orders” page, displaying the entire order in a card-style view, displaying all products ordered, what date they were ordered, and how much was paid.</li>
+            </ul>
+            <p>Due Date: 20th April, 2025</p>
+        </div>
+        <div class="delivery-plan-section">
+            <h3>Client Feedback</h3>
+            <p>
+                She was content with the idea. She insisted that we have a gallery page, in which there are popups with descriptions to each product. Originally, we were gonna link to an entirely different page once the customer clicks on a product, but she wishes for products to “pop-up” rather than opening up a whole separate new page. This is what she said, exactly: “When someone clicks on a cake for instance, I don’t want an entire new page with the product to show up. Make a cool little animation pop-up and make it look smooth/minimalistic”. On top of this, at first, we made a small client website skeleton. We worked with a brown and white colour palette, however, she wished for light pinks, whites, and beige, as those are the primary colours that she uses to promote her company. This is what she said verbatim, “I like the skeleton but do not use brown and white. Use a variety of pinks, maybe like three and use some beige. If you look at my logo, the colours I want are directly on it.” Finally, the one thing that she requested for most was including a “my orders” section. In that form, she wants there to be a countdown for when a product is ready. For instance, if a customer buys a cake, they should have the option to check when their cake will be ready. So, let’s say when they first buy it, there should be a label stating that the cake should be ready in 48 hours. After a day passes, it should change to 24 hours, and then finally, the status should change to “ready to pick-up”. We never thought of this idea in the first place, but as she proposed her idea to us, we will implement it in our project. This was what she said, verbatim, “I want customers to know when their product is ready. I’m always getting calls from customers who ask when the cake will be done, how long they have to wait; this gets pretty overwhelming. So, include a timer for when a product is ready, so that customers know when their order is ready!”.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

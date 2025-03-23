@@ -1,0 +1,27 @@
+#delivery-plan-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto
+}
+
+.delivery-plan-section h3 {
+    font-size: 18px;
+}
+
+.delivery-plan-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.delivery-plan-section h3, h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
