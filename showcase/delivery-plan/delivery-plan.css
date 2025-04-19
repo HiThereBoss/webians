@@ -25,3 +25,12 @@
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
+.revision-text {
+    color: red;
+}
+
+.removed {
+    text-decoration: line-through;
+    color: red;
+}

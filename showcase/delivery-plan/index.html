@@ -19,6 +19,7 @@
     </div>
     <div id = "delivery-plan-main">
         <h2>Delivery Plan</h2>
+        <p>Note: all revisions are colored <span class="revision-text">red</span></p>
 
         <div class="delivery-plan-section">
             <h3>Names</h3>
@@ -36,7 +37,7 @@
         </div>
         <div class="delivery-plan-section">
             <h3>Purpose</h3>
-            <p>The web-app will be for clients to order cakes and bouquets for weddings, anniversaries and any other occasions. There will be a home page, in which buyers can view products, click on them to view their descriptions, and add them to cart. After adding them to the cart, they can buy the products they chose, and as a result, a receipt will be generated with their order number and details. We chose to build this product because we wanted to help someone grow their business. Aala, an iBioMed student at McMaster, has had her baking and bouquet business for years, but felt that there was a gap between customers and her products. The only way people knew about her products was through word-of-mouth. To order her products, people would have to call her continuously; she believed that it felt tedious. So, we wanted to create a website for her so that she could use it to promote her business, and the website would also create an “ordering service” that is seamlessly easy.</p>
+            <p>The web-app will be for clients to order cakes and bouquets for weddings, anniversaries and any other occasions. There will be a home page, in which buyers can view products, click on them to view their descriptions, and add them to cart. After adding them to the cart, they can buy the products they chose, and as a result, a receipt will be generated with their order number and details. <span class="revision-text">There will be a login system so that users can access all of their past orders (if logged in during purchase), and admin accounts get special access to certain pages.</span> We chose to build this product because we wanted to help someone grow their business. Aala, an iBioMed student at McMaster, has had her baking and bouquet business for years, but felt that there was a gap between customers and her products. The only way people knew about her products was through word-of-mouth. To order her products, people would have to call her continuously; she believed that it felt tedious. So, we wanted to create a website for her so that she could use it to promote her business, and the website would also create an “ordering service” that is seamlessly easy.</p>
         </div>
         <div class="delivery-plan-section">
             <h3>Data Description</h3>
@@ -54,20 +55,64 @@
                 <li>Time to make: TIME</li>
             </ul>
             <br>
-            <h4>Table 2: Order details</h4>
-            <p>Required for storing data about customers’ order for future reference.
-                A unique ID will be given to each order, along with the customer’s name, email, and phone to identify them if necessary, as well the purchase date, the product IDs, and the price they paid.</p>
-            <p>The product IDs will be stored in a varchar, in the format “001,002,..,X”, in order to be able to store multiple product IDs in one field. An importer and exporter needs to be made to read and write data in this custom list structure.</p>
-            <h5>Fields</h5>
-            <ul>
-                <li>ID: int</li>
-                <li>Name: VARCHAR(50)</li>
-                <li>Email: VARCHAR(50)</li>
-                <li>Phone: VARCHAR(10)</li>
-                <li>PDate: DATE</li>
-                <li>ProdIDs: VARCHAR(50)</li>
-                <li>Paid: DECIMAL(5,2)</li>
-            </ul>
+            <div class="removed">
+                <h4>Table 2: Order details</h4>
+                <p>Required for storing data about customers’ order for future reference.
+                    A unique ID will be given to each order, along with the customer’s name, email, and phone to identify them if necessary, as well the purchase date, the product IDs, and the price they paid.</p>
+                <p>The product IDs will be stored in a varchar, in the format “001,002,..,X”, in order to be able to store multiple product IDs in one field. An importer and exporter needs to be made to read and write data in this custom list structure.</p>
+                <h5>Fields</h5>
+                <ul>
+                    <li>ID: int</li>
+                    <li>Name: VARCHAR(50)</li>
+                    <li>Email: VARCHAR(50)</li>
+                    <li>Phone: VARCHAR(10)</li>
+                    <li>PDate: DATE</li>
+                    <li>ProdIDs: VARCHAR(50)</li>
+                    <li>Paid: DECIMAL(5,2)</li>
+                </ul>
+            </div>
+            <span class="revision-text">
+                <h4>Table 2: Product images</h4>
+                <p>Each entry stores an image URL, which can be used to dynamically create images with custom src attributes, and the entries are linked to a product, making it easy to store a dynamic amount of images per product.</p>
+                <h5>Fields</h5>
+                <ul>
+                    <li>image_id: int</li>
+                    <li>product_id: int</li>
+                    <li>image_path: VARCHAR(255)</li>
+                </ul>
+                <br>
+
+                <h4>Table 3: Orders</h4>
+                <p>Required to store order history for guests and users. Each entry represents one single order. Useful to let users see their past orders, see how much they paid, and also for admins to view every pending and past order.</p>
+                <h5>Fields</h5>
+                <ul>
+                    <li>Order_id: int</li>
+                    <li>Userid: VARCHAR(20)</li>
+                    <li>Purchase_date: DATE</li>
+                    <li>Purchase_price: DECIMAL(5,2)</li>
+                </ul>
+                <br>
+
+                <h4>Table 4: Order items</h4>
+                <p>Stores each product purchased for an order. Each entry represents a single product that was purchased in an order. This is useful, as it allows a dynamic number of product purchases to be stored for each order without having to use work-around methods such as making custom string-to-data converters and storing a large VARCHAR with all product IDs.</p>
+                <h5>Fields</h5>
+                <ul>
+                    <li>Item_id: int</li>
+                    <li>Order_id: int</li>
+                    <li>Product_id: int</li>
+                    <li>Price: DECIMAL(5,2)</li>
+                </ul>
+                <br>
+                <h4>Table 5: Users</h4>
+                <p>Required in order to create a login system, so if a customer wishes, they can create an account and view their order history. Also useful for distinguishing between admin users and normal customers.</p>
+                <h5>Fields</h5>
+                <ul>
+                    <li>Userid: VARCHAR(20)</li>
+                    <li>Password: VARCHAR(60)</li>
+                    <li>Role: enum('customer', 'admin')</li>
+                </ul>
+                <br>
+            </span>
         </div>
         <div class="delivery-plan-section">
             <h3>Functions Peformed by the App</h3>
@@ -78,11 +123,17 @@
                 There is also an order page where there are options to order cakes and bouquets, that will be placed in a cart where there will be a list which displays all items that are added to the cart. The total price of the products will be displayed in the cart(tax, etc.). This feature will require the “SELECT” query, in order to fetch products from the database and display them in the page accordingly.
             </p>
             <p>
-                There will also be a popup display of the products which displays its title, descriptions, price, and a button which allows the user to add it to their cart. This will also require the “SELECT” query, in order to fetch more product information to be displayed in the pop-up page.
+                There will also be a popup display of the products which displays its title, descriptions, price, and a button which allows the user to add it to their cart. This will also require the “SELECT” query, in order to fetch more product information to be displayed in the pop-up page using AJAX.
             </p>
             <p>
                 To purchase, there will be a purchase option where you have to enter your name, relevant contact details, card details, information validation and any tips if you want to offer. A receipt will be generated which will display each item’s price with tax and any tip amount you want to offer, and the subtotal will be displayed, including an option to download your receipt in either pdf or png. This feature will require the “INSERT” query, in order to insert the purchase data into the order details table of the database for future reference.
             </p>
+            <span class="revision-text">
+                <p>
+                    There will be a login system whose primary goal is to identify who ordered what, but also providing the ability to have admin users perform certain actions and get access to their own dedicated page.
+                    There will be an admin page for the owner and any relevant personnel to add new products, with all of the relevant fields and an option to add multiple images. 
+                </p>
+            </span>
             <p>
                 Finally, there will be a “my orders” section, where there will be the list of orders a customer has made, alongside countdowns for when each product will be ready. This form will update whenever the user makes a purchase. For now, the data will be stored in “localstorage” instead of the database, as there are no plans for an account system where the order history can be stored in the database for each user.
             </p>
@@ -90,16 +141,16 @@
         <div class="delivery-plan-section">
             <h3>Role of PHP and JavaScript</h3>
             <p>
-                PHP will be used to fetch products from the database, and display them in the orders page. It will also be used to insert data into the order’s table in the database upon successful user purchase of a product. 
+                PHP will be used to fetch products from the database, and display them in the orders page. It will also be used to insert data into the order’s table in the database upon successful user purchase of a product. <span class="revision-text">We will have no HTML files, as the header requires PHP to work.</span>
             </p>
             <p>
-                Javascript will be used for data validation when the user is purchasing their cart. It will also be used for defining logic to be executed by buttons, and pop-up logic for products in the order page. Finally, the cart system and order history system will be developed in Javascript, which will make use of localstorage as the app will not have an account system to store account-specific data in the database. As such, the bulk of the code will be in JavaScript.
+                Javascript will be used for data validation when the user is purchasing their cart. It will also be used for defining logic to be executed by buttons, and pop-up logic for products in the order page. Finally, the cart system and order history system will be developed in Javascript, which will make use of localstorage as the app will not have an account system to store account-specific data in the database. As such, the bulk of the code will be in JavaScript. <span class="revision-text">We will mainly be using AJAX to fetch data dynamically when necessary, which is especially useful for popups, which our app uses frequently.</span>
             </p>
         </div>
         <div class="delivery-plan-section">
             <h3>Role of Team Members</h3>
             <ul>
-                <li>Emre: Cart (List display of all items in cart, Total price (+tax, etc.)), Gallery display of products, Add to cart.</li>
+                <li>Emre: Cart (List display of all items in cart, Total price (+tax, etc.)), Gallery display of products, Add to cart<span class="revision-text">, Login/user system, Admin page. Creating database, tables, and most of the relevant PHP and AJAX logic for own pages + receipt and order history pages</span></li>
                 <li>Sreyo:  Home page, Popup display for each product (Title of product, Description, Price), logic for when product is clicked and opened to view.</li>
                 <li>Tiya: Receipt (Each item’s price + tax, Tip amount, Subtotal, Option to save receipt (download pdf or png)</li>
                 <li>Siddhi: Purchase form (Name, relevant contact info, (fake) card details, Info validation, Tip %)</li>
@@ -109,7 +160,7 @@
         <div class="delivery-plan-section">
             <h3>The Increments</h3>
 
-            <h4>First Increment</h4>
+            <h4>Increment Zero</h4>
             <p>
                 Develop a skeleton of the web app, a purely visual prototype that can be delivered to the client to receive any feedback before implementing logic. This will be done using raw HTML and CSS; we will focus on meeting the client’s visual needs, which include a basic colour palette, shapes of choice alongside fonts they wish to have. 
             </p>
@@ -123,7 +174,7 @@
             </ul>
             <p>Due Date: 28th March, 2025</p>
 
-            <h4>Second Increment</h4>
+            <h4>First Increment</h4>
             <p>
                 Work on client feedback, and implement Javascript logic. This includes: beginning the cart system, working pop-ups for products in the order page, and developing a working form for purchases.
             </p>
@@ -137,13 +188,13 @@
             </ul>
             <p>Due Date: 5th April, 2025</p>
             
-            <h4>Third Increment</h4>
+            <h4>Final Increment</h4>
             <p>
                 With the logic mainly completed, finish off the cart and purchasing system, and implement automatic loading of all available products into the order page. Finishing off these features will require the use of PHP to communicate with the database.
             </p>
             <h5>Tasks</h5>
             <ul>
-                <li>Emre: work on auto-generation of products in the order page, by fetching data from the database and adding product “cards” accordingly. Successful purchase of product should insert data into the order details table.</li>
+                <li>Emre: work on auto-generation of products in the order page, by fetching data from the database and adding product “cards” accordingly. Successful purchase of product should insert data into the order details table. <span class="revision-text">Complete login system, and admin page. Integrate the database logic required when purchasing orders (inserting into orders table).</span> </li>
                 <li>Sreyo: pop-up should now fetch data from the database, displaying information about the selected product in the database.</li>
                 <li>Tiya and Siddhi: work on actual communication between the purchase and receipt page, so that the information from the purchased items will be sent to the receipt and formatted properly.</li>
                 <li>Peter: upon successful purchase, the order should be added into the “My Orders” page, displaying the entire order in a card-style view, displaying all products ordered, what date they were ordered, and how much was paid.</li>
