@@ -32,8 +32,8 @@
                 <li>Tiya Jathan</li>
                 <li>Siddhi Upadhyaya</li>
             </ul>
-            <p>Client: CreationsByAla</p>
-            <p>App: CreationsByAla</p>
+            <p>Client: CreationsByAala</p>
+            <p>App: CreationsByAala</p>
         </div>
         <div class="delivery-plan-section">
             <h3>Purpose</h3>
@@ -115,7 +115,7 @@
             </span>
         </div>
         <div class="delivery-plan-section">
-            <h3>Functions Peformed by the App</h3>
+            <h3>Functions Performed by the App</h3>
             <p>
                 The website will have a homepage where all the available products(bouquets and cakes) and varieties of products will be shown. There will also be a mainpage where some of the products will be displayed in a gallery.
             </p>
@@ -128,6 +128,9 @@
             <p>
                 To purchase, there will be a purchase option where you have to enter your name, relevant contact details, card details, information validation and any tips if you want to offer. A receipt will be generated which will display each item’s price with tax and any tip amount you want to offer, and the subtotal will be displayed, including an option to download your receipt in either pdf or png. This feature will require the “INSERT” query, in order to insert the purchase data into the order details table of the database for future reference.
             </p>
+            <p>
+                Aala also wishes for all this to be done on a webapp that is intended to be used by people who are using larger screens such as laptops and computers. She envisions a layout and overall aesthetic that looks good on a larger, horizontal screen and wishes for a lot of products to be displayed on the screen simultaneously.
+            </p>
             <span class="revision-text">
                 <p>
                     There will be a login system whose primary goal is to identify who ordered what, but also providing the ability to have admin users perform certain actions and get access to their own dedicated page.
@@ -135,8 +138,15 @@
                 </p>
             </span>
             <p>
-                Finally, there will be a “my orders” section, where there will be the list of orders a customer has made, alongside countdowns for when each product will be ready. This form will update whenever the user makes a purchase. For now, the data will be stored in “localstorage” instead of the database, as there are no plans for an account system where the order history can be stored in the database for each user.
+                There will be a “my orders” section, where there will be the list of orders a customer has made, alongside countdowns for when each product will be ready. This form will update whenever the user makes a purchase. For now, the data will be stored in “localstorage” instead of the database, as there are no plans for an account system where the order history can be stored in the database for each user. 
             </p>
+            <span class = "revision-text">
+                <br>
+                **ADDED FEATURE** : There will now be a login system whose primary goal is to identify who ordered what, but also providing the ability to have admin users perform certain actions and get access to their own dedicated page. There will be an admin page for the owner and any relevant personnel to add new products, with all of the relevant fields and an option to add multiple images. <br>
+                <br>
+                **WHY IT WAS ADDED**: From the first development plan, we were told that we didn’t have much for a 5 person group. We agreed, and so, we took the feedback and added a login page! This made everything more complex because now we have another data table that stores the users. All other functionalities like calculating total prices of orders, item popups, saving cart information and the “my orders page” will all differ from customer to customer; all this information will be saved in accordance to whichever customer is logged in. In addition to this, we were told that Aala should be able to update items that are available for sale. So, we added an admin page for the owner where she will login with her credentials and have the ability to do so.
+
+            </span>
         </div>
         <div class="delivery-plan-section">
             <h3>Role of PHP and JavaScript</h3>
@@ -150,9 +160,9 @@
         <div class="delivery-plan-section">
             <h3>Role of Team Members</h3>
             <ul>
-                <li>Emre: Cart (List display of all items in cart, Total price (+tax, etc.)), Gallery display of products, Add to cart<span class="revision-text">, Login/user system, Admin page. Creating database, tables, and most of the relevant PHP and AJAX logic for own pages + receipt and order history pages</span></li>
-                <li>Sreyo:  Home page, Popup display for each product (Title of product, Description, Price), logic for when product is clicked and opened to view.</li>
-                <li>Tiya: Receipt (Each item’s price + tax, Tip amount, Subtotal, Option to save receipt (download pdf or png)</li>
+                <li>Emre: Cart (List display of all items in cart, Total price (+tax, etc.)), Gallery display of products, Add to cart<span class="revision-text">, Login/user system, with admin page</span></li>
+                <li>Sreyo:  Home page, Popup display for each product (Title of product, Description of the product, Price of each product), logic for when product is clicked and opened to view.</li>
+                <li>Tiya: Receipt (Each item’s price + tax, Tip amount, Subtotal, Option to save receipt (download pdf or png))</li>
                 <li>Siddhi: Purchase form (Name, relevant contact info, (fake) card details, Info validation, Tip %)</li>
                 <li>Peter:  My Orders page, where a history of all past orders can be viewed.</li>
             </ul>
@@ -160,7 +170,7 @@
         <div class="delivery-plan-section">
             <h3>The Increments</h3>
 
-            <h4>Increment Zero</h4>
+            <h4>Increment Zero (We did this for fun this is not our official first increment)</h4>
             <p>
                 Develop a skeleton of the web app, a purely visual prototype that can be delivered to the client to receive any feedback before implementing logic. This will be done using raw HTML and CSS; we will focus on meeting the client’s visual needs, which include a basic colour palette, shapes of choice alongside fonts they wish to have. 
             </p>
@@ -173,8 +183,14 @@
                 <li>Peter: make a skeleton for the “My Orders” page</li>
             </ul>
             <p>Due Date: 28th March, 2025</p>
+            <br>
 
-            <h4>First Increment</h4>
+            <span class = "revision-text">
+                <p>**WHAT WE ADDED AND CHANGED BELOW**</p>
+                Before, our “first increment” included no functionality and only consisted of html and css work. We changed this, and now, in our first increment, we focused on also adding functionality rather than just making the website “pretty”.
+
+            </span>
+            <h4>First OFFICIAL Increment</h4>
             <p>
                 Work on client feedback, and implement Javascript logic. This includes: beginning the cart system, working pop-ups for products in the order page, and developing a working form for purchases.
             </p>
@@ -187,6 +203,16 @@
                 <li>Peter: develop a system for adding products into the “My Orders” page, which will not be able to take any data at this increment. The system needs to store information to localstorage, so that they can be fetched everytime the user comes back, and displays the information back again.</li>
             </ul>
             <p>Due Date: 5th April, 2025</p>
+            <br>
+            
+
+            <span class = "revision-text">
+                <p>**WHY WE INCLUDED THIS CHANGE**</p>
+                
+                In the first development plan, we received the following feedback: The first increment should be more than just design, it should “do something”. So, we added functionality to our first increment. Of course, not working on ALL the logic, but some logic to develop some momentum (i.e. working on item popups, creating the cart logic, starting the receipt logic with placeholder information, implementing data validation with placeholder information for the purchase form and starting the functionality for the orders page(this will also use placeholder data and will be replaced with actual data later on))
+
+
+            </span>
             
             <h4>Final Increment</h4>
             <p>
@@ -194,17 +220,23 @@
             </p>
             <h5>Tasks</h5>
             <ul>
-                <li>Emre: work on auto-generation of products in the order page, by fetching data from the database and adding product “cards” accordingly. Successful purchase of product should insert data into the order details table. <span class="revision-text">Complete login system, and admin page. Integrate the database logic required when purchasing orders (inserting into orders table).</span> </li>
-                <li>Sreyo: pop-up should now fetch data from the database, displaying information about the selected product in the database.</li>
-                <li>Tiya and Siddhi: work on actual communication between the purchase and receipt page, so that the information from the purchased items will be sent to the receipt and formatted properly.</li>
+                <li>Emre: work on auto-generation of products in the order page, by fetching data from the database and adding product “cards” accordingly. Successful purchase of product should insert data into the order details table.</li>
+                <li>Sreyo: pop-up should now fetch data from the database, displaying information about the selected product in the database. Additionally, fetching all of the images from a separate table, which allows every product to have a variable amount of images associated with them</li>
+                <li>Tiya and Siddhi: work on actual communication between the purchase and receipt page, so that the information from the purchased items will be sent to the receipt and formatted properly. <span class="revision-text">Complete login system, and admin page. Integrate the database logic required when purchasing orders (inserting into orders table).</span></li>
                 <li>Peter: upon successful purchase, the order should be added into the “My Orders” page, displaying the entire order in a card-style view, displaying all products ordered, what date they were ordered, and how much was paid.</li>
             </ul>
             <p>Due Date: 20th April, 2025</p>
         </div>
         <div class="delivery-plan-section">
             <h3>Client Feedback</h3>
+            <h4>Feedback on our plan</h4>
             <p>
                 She was content with the idea. She insisted that we have a gallery page, in which there are popups with descriptions to each product. Originally, we were gonna link to an entirely different page once the customer clicks on a product, but she wishes for products to “pop-up” rather than opening up a whole separate new page. This is what she said, exactly: “When someone clicks on a cake for instance, I don’t want an entire new page with the product to show up. Make a cool little animation pop-up and make it look smooth/minimalistic”. On top of this, at first, we made a small client website skeleton. We worked with a brown and white colour palette, however, she wished for light pinks, whites, and beige, as those are the primary colours that she uses to promote her company. This is what she said verbatim, “I like the skeleton but do not use brown and white. Use a variety of pinks, maybe like three and use some beige. If you look at my logo, the colours I want are directly on it.” Finally, the one thing that she requested for most was including a “my orders” section. In that form, she wants there to be a countdown for when a product is ready. For instance, if a customer buys a cake, they should have the option to check when their cake will be ready. So, let’s say when they first buy it, there should be a label stating that the cake should be ready in 48 hours. After a day passes, it should change to 24 hours, and then finally, the status should change to “ready to pick-up”. We never thought of this idea in the first place, but as she proposed her idea to us, we will implement it in our project. This was what she said, verbatim, “I want customers to know when their product is ready. I’m always getting calls from customers who ask when the cake will be done, how long they have to wait; this gets pretty overwhelming. So, include a timer for when a product is ready, so that customers know when their order is ready!”.
+            </p>
+
+            <h4>Feedback on the FIRST INCREMENT</h4>
+            <p>
+                When we first presented our first increment, she really liked everything we were doing. Since we had almost ALL of the css and html down, she already liked the "feel" and aesthetic of the website. We had vibrant pinks a few whites in there as well, but what caught her eye the most was the spinning cake in the middle. She realized it was her's and found the idea to be really cool. On top of that, we presented a few event clickers like clicking the cart system, we showed her the login system and how users are remembered when they log in, how the orders pages lead into the receipts and purchase pages, alongside how the items popup after fetched from the database. At the time, since it was only the first increment, the page was still a bit plain (for instance during the popups there was only a single cake added to the website for demonstration). Overall, she saw the vision and was really proud of it. But, one thing we focused on was showing her the countdown timer for when a cake is ready to be picked up. Since this was the feedback she gave us, we made sure to incorporate it into our project. Here was what she said verbatim: “I love the website so far. I love the colours, the spinning cake is a really nice touch, and I love how you guys are making it look. Even though I don't get any of this database stuff, I found it so useful how users are remembered and how the top navigation panels change based on who is logged in. On top of that, the popups, the orders page after you guys press the order button on the popup, the purchase page that follows after that, and finally the receipt right after is so organized and linear. I love how it's working already, it seems very professional! One thing, I like how you added the countdown timer that I wanted! On top of that, the login system as well. It wasn't there before, but it makes a lot of sense I can't believe I forgot about that. It's so important because I need to keep track of who ordered what, and on top of that, I feel like its just a norm for websites to have logins. Great work, and I like that you guys added that. Keep it up!""  
             </p>
         </div>
     </div>
